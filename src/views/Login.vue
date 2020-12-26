@@ -29,7 +29,7 @@
                 <v-spacer></v-spacer>
             </v-col>
             <v-col cols="12">
-                <v-btn block large v-on:click="signInWithFacebook">
+                <v-btn block large v-on:click="signInWithGoogle">
                     Googleを使用してログイン
                 </v-btn>
             </v-col>
