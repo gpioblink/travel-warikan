@@ -21,6 +21,11 @@ const routes: Array<RouteConfig> = [
     path: '/start',
     name: 'Start',
     component: Start
+  },
+  {
+    path: '/new',
+    name: 'New',
+    component: Start
   }
 ]
 
