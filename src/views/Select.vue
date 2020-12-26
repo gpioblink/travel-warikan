@@ -11,6 +11,7 @@
             label="キーワードを入力"
             single-line
           ></v-text-field>
+          <v-btn class="ma-2" tile color="indigo" dark>送信</v-btn>
         </v-col>
       </v-row>
     </v-form>
