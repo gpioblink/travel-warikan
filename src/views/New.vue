@@ -1,18 +1,16 @@
 <template>
-    <v-container>
-        <div>
+    <v-container fill-height>
+        <v-row justify="center">
+            <v-col cols="10">
     <v-text-field
-      label="Main input"
+      label="タイトル"
       :rules="rules"
       hide-details="auto"
     ></v-text-field>
-    <v-text-field label="Another input"></v-text-field>
-  </div>
-        <v-row dense>
-            <v-col cols="12">
-                <v-btn height="200px" block large>
-                    旅行に参加
-                </v-btn>
+    <v-text-field label="キーワード"></v-text-field>
+  <v-btn
+  elevation="6"
+>OK</v-btn>
             </v-col>
         </v-row>
     </v-container>
