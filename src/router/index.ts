@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Start from '../views/Start.vue'
 import Select from '../views/Select.vue'
+import New from '../views/New.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes: Array<RouteConfig> = [
     path: '/select',
     name: 'Select',
     component: Select
+  },
+  {
+    path: '/new',
+    name: 'New',
+    component: New 
   }
 ]
 
