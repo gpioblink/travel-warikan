@@ -21,11 +21,11 @@
         <v-list-item-title>Single-line item</v-list-item-title>
       </v-list-item-content>
     </v-list-item>  -->
-    <v-list-item-title v-for="(log, i) in logs">
+    <v-list-item-title v-for="(log,i) in logs" v-bind:key="i">
       <!-- <v-list-item-title text="log.paymentUser.user"> -->
       <v-list-item-title>
         {{log.paymentUser.user}}: +{{log.paymentUser.price}}
-        <v-list-item-title v-for="(a, i) in log.dutyUsers">
+        <v-list-item-title v-for="(a,j) in log.dutyUsers" v-bind:key="j">
           {{a.user}}: -{{a.price}}
         </v-list-item-title>
       </v-list-item-title>
@@ -101,7 +101,7 @@ import firebase from 'firebase';
               this.logs.forEach(log => {
                 const index = log.dutyUsers.findIndex(({user}) => user === member);
                 if(index >= 0) {
-                  sumPrice -= log.dutyUsers[index].price; 
+                  sumPrice -= log.dutyUsers[index].price;
                 } else if(member === log.paymentUser.user) {
                   sumPrice += log.paymentUser.price;
                 }
@@ -115,7 +115,7 @@ import firebase from 'firebase';
           travelName: "",
           logs: [],
           members: []
-        }) 
+        })
     }
 
 </script>
