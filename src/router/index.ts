@@ -5,14 +5,15 @@ import About from '../views/About.vue'
 import Start from '../views/Start.vue'
 import Select from '../views/Select.vue'
 import New from '../views/New.vue'
+import Main from '../views/Main.vue'
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Main',
+    component: Main 
   },
   {
     path: '/about',
