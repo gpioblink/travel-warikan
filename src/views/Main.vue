@@ -14,22 +14,81 @@
         </v-col>
       </v-row>
     </v-form>
+
+
+
     <template>
-     じぶりんテスト {{calcSumPayment}}
+  <v-simple-table dark>
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">
+            Name
+          </th>
+          <th class="text-left">
+            debt 
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="calc in calcSumPayment"
+          :key="calc.user"
+        >
+          <td>{{ calc.user}}</td>
+          <td>{{ calc.price}}</td>
+        </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
+     <!-- じぶりんテスト {{calcSumPayment}} -->
      <!-- <v-list-item>
       <v-list-item-content>
         <v-list-item-title>Single-line item</v-list-item-title>
       </v-list-item-content>
     </v-list-item>  -->
-    <v-list-item-title v-for="(log, i) in logs">
-      <!-- <v-list-item-title text="log.paymentUser.user"> -->
+
+
+    <!-- <v-list-item-title v-for="(log, i) in logs " v-bind:key="">
       <v-list-item-title>
         {{log.paymentUser.user}}: +{{log.paymentUser.price}}
         <v-list-item-title v-for="(a, i) in log.dutyUsers">
           {{a.user}}: -{{a.price}}
         </v-list-item-title>
       </v-list-item-title>
-    </v-list-item-title>
+    </v-list-item-title> -->
+
+
+
+    <template>
+  <v-simple-table dense>
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">
+            Payer
+          </th>
+          <th class="text-left">
+            other 
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="log in logs"
+          :key="log.paymentUser"
+        >
+          <td>{{log.paymentUser.user}}: +{{ log.paymentUser.price}} </td>
+          <td>
+            <v-list-item-title v-for="a, in log.dutyUsers" :key="a.user">
+             {{a.user}}: -{{a.price}}
+            </v-list-item-title>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
+</template>
 
   <!-- {{logs}} -->
 </template>

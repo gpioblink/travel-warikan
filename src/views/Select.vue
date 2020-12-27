@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-form>
+    <v-form v-on:submit.prevent="">
       <v-row
         justify="center"
       >
@@ -10,8 +10,9 @@
           <v-text-field
             label="キーワードを入力"
             single-line
+            v-model="keyword"
           ></v-text-field>
-          <v-btn class="ma-2" tile color="indigo" dark>送信</v-btn>
+          <v-btn class="ma-2" tile color="indigo" dark v-on:click="sendKeyword">送信</v-btn>
         </v-col>
       </v-row>
     </v-form>
@@ -20,7 +21,18 @@
 
 <script>
     export default {
-        name: "Select.vue"
+      name: "Select.vue",
+      methods: {
+        sendKeyword: function() {
+          console.log("key", this.keyword);
+          if(this.keyword !== "") {
+            this.$router.push({name: 'Login', params: {keyword: this.keyword}});
+          }
+        }
+      },
+      data: () => ({
+        keyword: ""
+      })
     }
 </script>
 

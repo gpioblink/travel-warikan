@@ -3,7 +3,7 @@
         <v-row dense>
             <v-col cols="12">
                 <v-alert type="info">
-                    「タイトル」の旅行へ招待されています。承認する場合は以下のリンクからログインしてください。
+                    「{{keyword}}」の旅行へ招待されています。承認する場合は以下のリンクからログインしてください。
                 </v-alert>
             </v-col>
             <v-col cols="12">
@@ -41,6 +41,7 @@
     import firebase from 'firebase';
     export default {
         name: "Login.vue",
+        props: ['keyword'],
         methods: {
             signInWithGitHub: function () {
                 const provider = new firebase.auth.GithubAuthProvider();

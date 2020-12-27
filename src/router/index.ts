@@ -4,9 +4,11 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Start from '../views/Start.vue'
 import Login from '../views/Login.vue'
+import Debug from '../views/Debug.vue'
 import Select from '../views/Select.vue'
 import New from '../views/New.vue'
 import Main from '../views/Main.vue'
+import Share from '../views/Share.vue'
 import Log from '../views/Log.vue'
 import Calc from '../views/Calc.vue'
 
@@ -31,7 +33,15 @@ const routes: Array<RouteConfig> = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    props: (route) => ({
+      keyword: route.params.keyword
+    })
+  },
+  {
+    path: '/debug',
+    name: 'Debug',
+    component: Debug
   },
   {
     path: '/select',
@@ -41,7 +51,15 @@ const routes: Array<RouteConfig> = [
   {
     path: '/new',
     name: 'New',
-    component: New 
+    component: New
+  },
+  {
+    path: '/new/:keyword/share',
+    name: 'Share',
+    component: Share,
+    props: (route) => ({
+      keyword: route.params.keyword
+    })
   },
   {
     path: '/log',
