@@ -5,6 +5,7 @@ import About from '../views/About.vue'
 import Start from '../views/Start.vue'
 import Select from '../views/Select.vue'
 import New from '../views/New.vue'
+import Log from '../views/Log.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes: Array<RouteConfig> = [
     path: '/new',
     name: 'New',
     component: New 
+  },
+  {
+    path: '/log',
+    name: 'Log',
+    component: Log
   }
 ]
 
