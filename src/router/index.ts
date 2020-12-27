@@ -48,9 +48,12 @@ const routes: Array<RouteConfig> = [
     component: New
   },
   {
-    path: '/share',
+    path: '/new/:keyword/share',
     name: 'Share',
-    component: Share
+    component: Share,
+    props: (route) => ({
+      keyword: route.params.keyword
+    })
   }
 ]
 

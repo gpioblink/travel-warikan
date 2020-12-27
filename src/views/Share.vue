@@ -7,10 +7,10 @@
         <v-card
         >
             <v-card-title class="headline">
-                キーワード「」を参加者に伝え参加させてください
+                キーワード「{{keyword}}」を参加者に伝え参加させてください
             </v-card-title>
 
-            <v-card-subtitle>または、リンクを送信してください</v-card-subtitle>
+            <v-card-subtitle>または、参加ページへのリンク http://localhost:8081/select/{{keyword}} を共有してください</v-card-subtitle>
 
             <v-card-actions>
                 <v-spacer></v-spacer>
@@ -25,7 +25,8 @@
 
 <script>
     export default {
-        name: "Share.vue"
+        name: "Share.vue",
+        props: ['keyword']
     }
 </script>
 
