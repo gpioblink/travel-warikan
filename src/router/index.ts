@@ -30,7 +30,10 @@ const routes: Array<RouteConfig> = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    props: (route) => ({
+      keyword: route.params.keyword
+    })
   },
   {
     path: '/debug',
