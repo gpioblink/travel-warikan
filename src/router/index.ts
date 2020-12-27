@@ -6,6 +6,7 @@ import Start from '../views/Start.vue'
 import Select from '../views/Select.vue'
 import New from '../views/New.vue'
 import Log from '../views/Log.vue'
+import Calc from '../views/Calc.vue'
 
 Vue.use(VueRouter)
 
@@ -39,7 +40,12 @@ const routes: Array<RouteConfig> = [
     path: '/log',
     name: 'Log',
     component: Log
-  }
+  },
+  {
+    path: '/calc',
+    name: 'Calc',
+    component: Calc
+  },
 ]
 
 const router = new VueRouter({
