@@ -35,13 +35,27 @@
             addLog: function () {
                 const db = firebase.firestore();
                 db.collection("travels").doc("nagoya202012").collection("log").add({
-                    name: "肉まん",
-                    paymentUser: "gpioblink@gmail.com",
+                    name: "フェラーリ",
+                    paymentUser: {
+                        user: "c@example.com",
+                        price: 8000
+                    },
                     dutyUsers: [
                         {
-                            user: "gpioblink@gmail.com",
-                            price: 300
-                        }
+                            user: "a@example.com",
+                            price: 2000
+                        },{
+                            user: "b@example.com",
+                            price: 2000
+                        },
+                        {
+                            user: "d@example.com",
+                            price: 2000
+                        },
+                        {
+                            user: "e@example.com",
+                            price: 2000
+                        },
                     ]
                 })
                     .then(function(docRef) {
